@@ -1,32 +1,27 @@
-import {Box} from "@mui/material";
+import {Plot} from "./Homepage";
 import PrimaryAppBar from "./PrimaryAppBar";
+import {Box} from "@mui/material";
 import React from "react";
 
-export interface Plot {
-    filename: string;
-    title: string;
-    description?: string;
-}
-
 const plots: Plot[] = [
-    {
-        filename: 'plots/plot1.png',
-        title: 'First Plot',
-        description: 'Description of first plot'
-    },
-    {
-        filename: 'plots/plot2.png',
-        title: 'Second Plot',
-        description: 'Description of second plot'
-    },
-    {
-        filename: 'plots/plot3.png',
-        title: 'Second Plot',
-        description: 'Description of second plot'
-    },
+  {
+    filename: '/plots/demoPlot1.png',
+    title: 'First Plot',
+    description: 'Description of first plot'
+  },
+  {
+    filename: '/plots/demoPlot2.png',
+    title: 'Second Plot',
+    description: 'Description of second plot'
+  },
+  {
+    filename: '/plots/demoPlot3.png',
+    title: 'Second Plot',
+    description: 'Description of second plot'
+  }
 ];
 
-export default function Homepage() {
+export default function ActualViz() {
     return (
         <Box>
             <PrimaryAppBar/>
@@ -51,5 +46,5 @@ export default function Homepage() {
                 </div>
             </div>
         </Box>
-    );
-};
+    )
+}

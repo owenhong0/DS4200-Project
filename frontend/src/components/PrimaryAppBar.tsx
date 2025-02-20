@@ -1,8 +1,8 @@
-import {AppBar, Badge, Box, IconButton, Menu, MenuItem, Toolbar, Typography} from "@mui/material";
+import {AppBar, Box, IconButton, Menu, MenuItem, Toolbar, Typography} from "@mui/material";
 import React from "react";
-import {useNavigate, useNavigation} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
-const pages = ['API Responses']
+const pages = ['Actual Visualizations','API Responses']
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 export default function PrimaryAppBar() {
@@ -40,7 +40,14 @@ export default function PrimaryAppBar() {
     const handlePageClick = (page: string) => {
         if (page === 'API Responses') {
             navigate('/api/ApiResponses')
+        } else if (page === 'Actual Visualizations') {
+            navigate('/components/ActualViz')
         }
+        handleCloseNavMenu()
+    }
+
+    const handleHomeClicked = () => {
+        navigate('/')
         handleCloseNavMenu()
     }
 
@@ -132,6 +139,7 @@ export default function PrimaryAppBar() {
                             noWrap
                             component="div"
                             sx={{display: {xs: 'none', sm: 'block'}}}
+                            onClick={() => handleHomeClicked()}
                         >
                             DS 4200 Visualization Project
                         </Typography>
